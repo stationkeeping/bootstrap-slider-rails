@@ -2,7 +2,7 @@
 
 This Gem integrates [Seiyara's fork](https://github.com/seiyria/bootstrap-slider) of [Bootstrap Slider](http://www.eyecon.ro/bootstrap-slider/). The original has no public Github Repo, issues tracking etc.
 
-It integrates this fork with your Rails project and is versioned to track the fork's versioning.
+It integrates this fork with your Rails project and is versioned to track the fork's version.
 
 ## Installation
 
@@ -31,10 +31,8 @@ Require the JavaScript files from your `application.js` or wherever needed using
 Require the CSS files from your `application.scss` or wherever needed using:
 
 ```
-*= require slider
+*= require bootstrap-slider
 ```
-
-*Note: This naming inconsistancy is part of Bootstrap Slider. I have opened a ticket [here](https://github.com/seiyria/bootstrap-slider/issues/41)
 
 ## Contributing
 
