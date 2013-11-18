@@ -1,6 +1,8 @@
-# Bootstrap::Slider::Rails
+# Bootstrap-Slider-Rails
 
-This Gem integrates [Seiyara's fork](https://github.com/seiyria/bootstrap-slider) of [Bootstrap Slider](http://www.eyecon.ro/bootstrap-slider/), which has no Github Repo, issues tracking etc. It integrates this fork with your Rails project and is versioned to track the fork's versioning.
+This Gem integrates [Seiyara's fork](https://github.com/seiyria/bootstrap-slider) of [Bootstrap Slider](http://www.eyecon.ro/bootstrap-slider/). The original has no public Github Repo, issues tracking etc.
+
+It integrates this fork with your Rails project and is versioned to track the fork's versioning.
 
 ## Installation
 
@@ -18,7 +20,21 @@ Or install it yourself as:
 
 ## Usage
 
-This gem used a Rails Engine to make Bootstrap Slider's assets available to you.
+This gem uses a Rails Engine to make Bootstrap Slider's assets available to you.
+
+Require the JavaScript files from your `application.js` or wherever needed using:
+
+```
+//= require bootstrap-slider
+```
+
+Require the CSS files from your `application.scss` or wherever needed using:
+
+```
+*= require slider
+```
+
+*Note: This naming inconsistancy is part of Bootstrap Slider. I have opened a ticket [here](https://github.com/seiyria/bootstrap-slider/issues/41)
 
 ## Contributing
 
