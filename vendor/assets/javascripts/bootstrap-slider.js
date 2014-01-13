@@ -86,7 +86,15 @@
 		}
 
 		['min', 'max', 'step', 'value'].forEach(function(attr) {
-			this[attr] = el.data('slider-' + attr) || options[attr] || el.prop(attr);
+			if (typeof el.data('slider-' + attr) !== 'undefined') {
+				this[attr] = el.data('slider-' + attr);
+			} else if (typeof options[attr] !== 'undefined') {
+				this[attr] = options[attr];
+			} else if (typeof el.prop(attr) !== 'undefined') {
+				this[attr] = el.prop(attr);
+			} else {
+				this[attr] = 0; // to prevent empty string issues in calculations in IE
+			}
 		}, this);
 
 		if (this.value instanceof Array) {
@@ -157,13 +165,16 @@
 			});
 		}
 
-		if (tooltip === 'show') {
+		if(tooltip === 'hide') {
+			this.tooltip.addClass('hide');
+		} else if(tooltip === 'always') {
+			this.showTooltip();
+			this.alwaysShowTooltip = true;
+		} else {
 			this.picker.on({
 				mouseenter: $.proxy(this.showTooltip, this),
 				mouseleave: $.proxy(this.hideTooltip, this)
 			});
-		} else {
-			this.tooltip.addClass('hide');
 		}
 
 		if (updateSlider === true) {
@@ -171,8 +182,8 @@
 			var val = this.calculateValue();
 			this.element
 				.trigger({
-					type: 'slide',
-					value: val
+					'type': 'slide',
+					'value': val
 				})
 				.data('value', val)
 				.prop('value', val);
@@ -180,9 +191,9 @@
 			if (old !== val) {
 				this.element
 					.trigger({
-						type: 'slideChange',
-						new: val,
-						old: old
+						'type': 'slideChange',
+						'new': val, // without a string literal, IE8 will interpret as the JS "new" keyword
+						'old': old
 					})
 					.data('value', val)
 					.prop('value', val);
@@ -209,7 +220,7 @@
 		},
 		
 		hideTooltip: function(){
-			if (this.inDrag === false) {
+			if (this.inDrag === false && this.alwaysShowTooltip !== true) {
 				this.tooltip.removeClass('in');
 			}
 			this.over = false;
@@ -356,12 +367,12 @@
 			var val = this.calculateValue();
 			this.layout();
 			this.element
+				.data('value', val)
+				.prop('value', val)
 				.trigger({
 					type: 'slideStop',
 					value: val
-				})
-				.data('value', val)
-				.prop('value', val);
+				});
 			return false;
 		},
 
