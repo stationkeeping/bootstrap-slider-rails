@@ -1,6 +1,6 @@
 # Bootstrap-Slider-Rails
 
-This Gem integrates [Seiyara's fork](https://github.com/seiyria/bootstrap-slider) of [Bootstrap Slider](http://www.eyecon.ro/bootstrap-slider/). The original has no public Github Repo, issues tracking etc.
+This Gem integrates [Seiyria's fork](https://github.com/seiyria/bootstrap-slider) of [Bootstrap-Slider](http://www.eyecon.ro/bootstrap-slider/). The original has no public Github Repo, issues tracking etc.
 
 It integrates this fork with your Rails project and is versioned to track the fork's version.
 
