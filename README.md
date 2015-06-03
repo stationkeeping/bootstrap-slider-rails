@@ -1,5 +1,10 @@
 # Bootstrap-Slider-Rails
 
+---
+**This Gem is now maintained and published by Guillaume Hain [here](https://github.com/YourCursus/bootstrap-slider-rails). Please submit any issues or feature requests over there.**
+---
+
+
 This Gem integrates [Seiyara's fork](https://github.com/seiyria/bootstrap-slider) of [Bootstrap Slider](http://www.eyecon.ro/bootstrap-slider/). The original has no public Github Repo, issues tracking etc.
 
 It integrates this fork with your Rails project and is versioned to track the fork's version.
