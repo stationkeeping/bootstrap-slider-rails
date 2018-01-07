@@ -473,6 +473,10 @@
 				this.handle1.addEventListener("focus", this.showTooltip, false);
 				this.handle1.addEventListener("blur", this.hideTooltip, false);
 
+        this.handle1.addEventListener("touchstart", this.showTooltip, false)
+        this.handle1.addEventListener("touchmove", this.showTooltip, false)
+        this.handle1.addEventListener("touchend", this.hideTooltip, false)
+
 				this.handle2.addEventListener("focus", this.showTooltip, false);
 				this.handle2.addEventListener("blur", this.hideTooltip, false);
 			}
